@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,7 +22,9 @@ public class LevelLoader {
              InputStreamReader reader = new InputStreamReader(inputStream);
              BufferedReader bufferedReader = new BufferedReader(reader)) {
             while ((header = readHeader(bufferedReader)).level != levelToLoad){
-                bufferedReader.skip(header.sizeX * header.sizeY + header.sizeY + 1);
+               String line = null;
+               while (line == null || !line.isEmpty())
+                   line = bufferedReader.readLine();
             }
             return readGameObjects(bufferedReader, header);
         } catch (IOException e) {
