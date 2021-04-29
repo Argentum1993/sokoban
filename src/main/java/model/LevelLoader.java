@@ -10,9 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LevelLoader {
-    private Path levels;
+    private String levels;
 
-    public LevelLoader(Path levels) {
+    public LevelLoader(String levels) {
         this.levels = levels;
     }
 
@@ -20,7 +20,7 @@ public class LevelLoader {
         int levelToLoad = level < 61 ? level : level % 60;
         Header header;
 
-        try (InputStream inputStream = Files.newInputStream(levels);
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(levels);
              InputStreamReader reader = new InputStreamReader(inputStream);
              BufferedReader bufferedReader = new BufferedReader(reader)) {
             while ((header = readHeader(bufferedReader)).level != levelToLoad){

@@ -7,16 +7,12 @@ import java.nio.file.Paths;
 public class Model {
     public static final int FIELD_CELL_SIZE = 20;
 
-    //Path to levels. Change if it doesn't work on your platform
-    String path = Paths.get("src", "main", "java", "res", "levels.txt")
-            .toAbsolutePath()
-            .toString();
-
+    String levelsResources = "levels.txt";
 
     private EventListener eventListener;
     private GameObjects gameObjects;
     private int currentLevel = 1;
-    private LevelLoader levelLoader = new LevelLoader(Paths.get(path));
+    private LevelLoader levelLoader = new LevelLoader(levelsResources);
 
     public void setEventListener(EventListener eventListener){
         this.eventListener = eventListener;
