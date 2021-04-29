@@ -25,6 +25,7 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <release>15</release>
                 </configuration>
             </plugin>
             <plugin>
