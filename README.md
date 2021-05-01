@@ -1,7 +1,7 @@
 # Sokoban
 A [sokoban](https://ru.wikipedia.org/wiki/Sokoban) game made in Java (15) with Swing.
 # About the project
-My training project as part of the course. Here I have used design pattern - MVC. Here I used the design pattern - MVC. And also used Collections Framework, lambda functions and Swing library.
+My training project as part of the course. Here I have used design pattern - MVC. And also used Collections Framework, lambda functions and Swing library.
 # Prerequisites
 * Java Development Kit (JDK) 15
 * Apache Maven
